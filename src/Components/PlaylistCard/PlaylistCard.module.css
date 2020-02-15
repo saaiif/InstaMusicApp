@@ -1,0 +1,116 @@
+.Card {
+	width: 300px;
+	display: flex;
+	align-items: center;
+	margin: 10px 0px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #fff;
+	background-color: #e74c3c;
+	transition: all 0.2s;
+	box-shadow: 2px 2px 10px rgba(90, 16, 16, 0.6);
+}
+
+.Card img {
+	width: 120px;
+	height: 120px;
+
+	border-radius: 10px;
+}
+
+.Card .Info {
+	/* letter-spacing: 2px; */
+	margin-left: 20px;
+}
+
+.Card:hover {
+	color: #52110a;
+	transform: scale(1.02);
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #f11a02;
+}
+
+::-webkit-scrollbar-track {
+	background: #52110a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #f54532;
+}
+
+@media (max-width: 940px) {
+	.Card {
+		width: 330px;
+	}
+}
+
+@media (max-width: 768px) {
+	.Card {
+		width: 340px;
+	}
+}
+
+@media (max-width: 475px) {
+	.Card {
+		width: 300px;
+		height: 100px;
+	}
+	.Card img {
+		width: 100px;
+		height: 100px;
+	}
+	.Card .Info {
+		letter-spacing: 1px;
+	}
+	.Card .Info h3 {
+		font-size: 18px;
+	}
+	.Card .Info p {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 428px) {
+	.Card {
+		width: 250px;
+		height: 80px;
+		padding: 0;
+		padding-right: 4px;
+	}
+	.Card img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.Card .Info h3 {
+		font-size: 16px;
+	}
+	.Card .Info p {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 320px) {
+	.Card {
+		width: 200px;
+		height: auto;
+		padding: 0;
+		padding-right: 4px;
+	}
+	.Card img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.Card .Info h3 {
+		font-size: 16px;
+	}
+	.Card .Info p {
+		font-size: 14px;
+	}
+}

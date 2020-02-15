@@ -1,0 +1,34 @@
+.PlaylistWrapper {
+	font-family: 'Montserrat', sans-serif;
+	width: 38%;
+	height: 97%;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	overflow-y: scroll;
+	border-left: 1px solid rgba(102, 19, 19, 0.6);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media (max-width: 1125px) {
+	.PlaylistWrapper {
+		width: 40%;
+		overflow-y: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.PlaylistWrapper {
+		width: 100%;
+		height: 300px;
+		position: static;
+		border: none;
+		border-top: 1px solid rgba(102, 19, 19, 0.6);
+		padding: 10px;
+		padding-top: 10px;
+
+		overflow-y: auto;
+	}
+}
