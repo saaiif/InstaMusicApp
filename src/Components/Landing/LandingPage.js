@@ -65,12 +65,38 @@ export default class LandingPage extends Component {
 		this.MusicPlayer.current.play();
 	};
 
-	restartSong = (e) => {
-		e.target.currentTime = 0;
-		this.setState({ Progress: 0 });
+	previousSong = (e) => {
+		if (this.state.repeatSongStatus) {
+			e.target.currentTime = 0;
+			this.setState({ Progress: 0 });
+		} else if (this.state.shuffleSongStatus) {
+			this.setState({
+				currentSongPos: Math.ceil(Math.random() * this.state.PlaylistData.length),
+				SongPlayStatus: true
+			});
+		} else {
+			if (this.state.currentSongPos <= 6) {
+				this.setState({
+					currentSongPos: this.state.currentSongPos - 1,
+					SongPlayStatus: true
+				});
+			} else if (this.state.currentSongPos === 7) {
+				this.setState({
+					currentSongPos: 0,
+					SongPlayStatus: true
+				});
+			}
+		}
 		this.MusicPlayer.current.load();
 		this.MusicPlayer.current.play();
 	};
+
+	// restartSong = (e) => {
+	// 	e.target.currentTime = 0;
+	// 	this.setState({ Progress: 0 });
+	// 	this.MusicPlayer.current.load();
+	// 	this.MusicPlayer.current.play();
+	// };
 
 	repeatSong = () => {
 		if (this.state.repeatSongStatus) {
@@ -144,7 +170,7 @@ export default class LandingPage extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://5dd1894f15bbc2001448d28e.mockapi.io/playlist')
+			.get('https://5dd1894f15bbc2001448d28e.mockapi.io/playlist')
 			.then((response) => {
 				this.setState({ PlaylistData: response.data, LoadingStatus: false });
 			})
@@ -165,7 +191,7 @@ export default class LandingPage extends Component {
 						playSong={this.playSong}
 						pauseSong={this.pauseSong}
 						nextSong={this.nextSong}
-						restartSong={this.restartSong}
+						previousSong={this.previousSong}
 						repeatSong={this.repeatSong}
 						repeatBtnStyle={this.state.repeatBtnStyle}
 						shuffleSong={this.shuffleSong}

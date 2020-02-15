@@ -20,7 +20,7 @@ function Player(props) {
 					style={{ color: props.shuffleBtnStyle }}
 					title="shuffle"
 				/>
-				<i className="fas fa-step-backward" onClick={props.restartSong} title="restart" />
+				<i className="fas fa-step-backward" onClick={props.previousSong} title="previous" />
 				{props.SongPlayStatus ? (
 					<i className="far fa-pause-circle" onClick={props.pauseSong} title="pause" />
 				) : (
