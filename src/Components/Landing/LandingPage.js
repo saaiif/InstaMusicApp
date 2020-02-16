@@ -91,13 +91,6 @@ export default class LandingPage extends Component {
 		this.MusicPlayer.current.play();
 	};
 
-	// restartSong = (e) => {
-	// 	e.target.currentTime = 0;
-	// 	this.setState({ Progress: 0 });
-	// 	this.MusicPlayer.current.load();
-	// 	this.MusicPlayer.current.play();
-	// };
-
 	repeatSong = () => {
 		if (this.state.repeatSongStatus) {
 			this.setState({ repeatSongStatus: false, repeatBtnStyle: '' });
