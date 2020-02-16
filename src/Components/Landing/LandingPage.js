@@ -163,7 +163,7 @@ export default class LandingPage extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://5dd1894f15bbc2001448d28e.mockapi.io/playlist')
+			.get('https://5dd1894f15bbc2001448d28e.mockapi.io/playlist')
 			.then((response) => {
 				this.setState({ PlaylistData: response.data, LoadingStatus: false });
 			})

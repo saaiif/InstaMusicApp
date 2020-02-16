@@ -1,5 +1,4 @@
 import React from 'react';
-
 import classes from './Player.module.css';
 
 function Player(props) {
